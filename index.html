@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Portfolio — Sanjay Kumar S</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --maroon: #6B1E2A;
+    --maroon-light: #8B2E3E;
+    --cream: #F2EDE4;
+    --warm-white: #FAF8F4;
+    --gold: #C9A96E;
+    --text-dark: #1A1008;
+    --text-mid: #4A3728;
+    --text-light: #8A7060;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--text-dark);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--maroon);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent calc(100%/6 - 1px),
+      rgba(255,255,255,0.04) calc(100%/6 - 1px),
+      rgba(255,255,255,0.04) calc(100%/6)
+    );
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 6vw, 88px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 300;
+    color: rgba(242,237,228,0.6);
+    margin-top: 20px;
+    margin-bottom: 48px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hero-meta span {
+    font-size: 13px;
+    color: rgba(242,237,228,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-meta strong {
+    color: rgba(242,237,228,0.85);
+    font-weight: 400;
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 80px 80px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-quote-block {
+    border-left: 2px solid var(--gold);
+    padding: 32px 40px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(4px);
+  }
+
+  .hero-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 1.8vw, 22px);
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--cream);
+    font-weight: 300;
+  }
+
+  .hero-quote-attr {
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(242,237,228,0.4);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+    z-index: 2;
+  }
+
+  .scroll-hint svg { opacity: 0.5; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── SECTION INTRO ── */
+  .section-intro {
+    padding: 100px 80px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    margin-bottom: 16px;
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.15;
+  }
+
+  .section-heading em {
+    font-style: italic;
+    color: var(--maroon);
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 32px 0;
+  }
+
+  /* ── ENTRIES ── */
+  .entries {
+    padding: 0 80px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .entry-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgba(107,30,42,0.12);
+  }
+
+  .entry-card:last-child { border-bottom: none; }
+
+  .entry-card.reverse { direction: rtl; }
+  .entry-card.reverse > * { direction: ltr; }
+
+  .entry-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 300;
+    color: rgba(107,30,42,0.07);
+    line-height: 1;
+    margin-bottom: -20px;
+    display: block;
+  }
+
+  .entry-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    border: 1px solid var(--maroon);
+    padding: 5px 12px;
+    margin-bottom: 20px;
+  }
+
+  .entry-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+  }
+
+  .entry-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-mid);
+    margin-bottom: 28px;
+  }
+
+  .mode-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .badge {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--cream);
+    color: var(--text-mid);
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  /* ── PDF PREVIEW ── */
+  .pdf-preview {
+    position: relative;
+    cursor: pointer;
+    group: true;
+    overflow: hidden;
+    border: 1px solid rgba(107,30,42,0.15);
+    background: var(--cream);
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pdf-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none;
+    transform-origin: top left;
+  }
+
+  .pdf-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(107,30,42,0.92) 0%, rgba(107,30,42,0.3) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .pdf-preview:hover .pdf-overlay { opacity: 1; }
+
+  .pdf-open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cream);
+    color: var(--maroon);
+    padding: 12px 24px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    width: fit-content;
+  }
+
+  .pdf-open-btn:hover { background: white; }
+
+  .pdf-hint {
+    font-size: 11px;
+    color: rgba(242,237,228,0.7);
+    margin-top: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-container {
+    background: var(--maroon);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    aspect-ratio: 3/4;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .audio-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent calc(100%/5 - 1px),
+      rgba(255,255,255,0.03) calc(100%/5 - 1px),
+      rgba(255,255,255,0.03) calc(100%/5)
+    );
+  }
+
+  .audio-title-block {
+    position: relative;
+    z-index: 1;
+  }
+
+  .audio-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .audio-track-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.3;
+    font-style: italic;
+  }
+
+  .waveform {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .waveform-bar {
+    flex: 1;
+    background: rgba(201,169,110,0.4);
+    border-radius: 2px;
+    transition: height 0.1s ease;
+  }
+
+  .waveform-bar.played { background: var(--gold); }
+
+  .audio-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .audio-progress-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .progress-bar-track {
+    height: 2px;
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--gold);
+    width: 0%;
+    transition: width 0.1s linear;
+    pointer-events: none;
+  }
+
+  .audio-time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: rgba(242,237,228,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .audio-btn-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+    flex-shrink: 0;
+  }
+
+  .play-btn:hover { transform: scale(1.08); background: #D4B87A; }
+
+  .play-btn svg { width: 20px; height: 20px; fill: var(--maroon); }
+
+  .play-label {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(242,237,228,0.7);
+  }
+
+  .volume-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .volume-row svg { width: 14px; height: 14px; fill: rgba(242,237,228,0.4); flex-shrink: 0; }
+
+  .volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2px;
+    background: rgba(255,255,255,0.15);
+    outline: none;
+    flex: 1;
+    cursor: pointer;
+  }
+
+  .volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    cursor: pointer;
+  }
+
+  /* ── AD REWORK VISUAL ── */
+  .ad-preview-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border: 1px solid rgba(107,30,42,0.15);
+  }
+
+  .ad-split {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .ad-original {
+    background: #5C3D2E;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .ad-new {
+    background: #F5D5CF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .ad-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .ad-original .ad-label { color: rgba(255,255,255,0.6); }
+  .ad-new .ad-label { color: rgba(80,40,30,0.6); }
+
+  .ad-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .ad-original .ad-tag { color: rgba(255,255,255,0.9); font-style: italic; }
+  .ad-new .ad-tag { color: #4A2020; font-weight: 600; }
+
+  .ad-bottom-bar {
+    background: var(--maroon);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ad-bottom-bar span {
+    font-size: 10px;
+    color: rgba(242,237,228,0.6);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .ad-open-link {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1px;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--maroon);
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+  }
+
+  .footer-left {}
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .footer-detail {
+    font-size: 12px;
+    color: rgba(242,237,228,0.5);
+    letter-spacing: 0.1em;
+    line-height: 2;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-course {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .footer-inst {
+    font-size: 12px;
+    color: rgba(242,237,228,0.4);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 40px 0;
+    grid-column: 1/-1;
+  }
+
+  .footer-bottom {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom span {
+    font-size: 11px;
+    color: rgba(242,237,228,0.3);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── AI DISCLOSURE ── */
+  .disclosure {
+    background: var(--cream);
+    padding: 60px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-left: 3px solid var(--maroon);
+    margin: 60px 80px;
+  }
+
+  .disclosure-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    margin-bottom: 20px;
+  }
+
+  .disclosure-text {
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--text-mid);
+    max-width: 700px;
+  }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20,8,4,0.92);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal-content {
+    width: 90vw;
+    height: 90vh;
+    position: relative;
+  }
+
+  .modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 80px 40px; }
+    .section-intro { padding: 80px 40px 40px; }
+    .entries { padding: 0 40px 80px; }
+    .entry-card, .entry-card.reverse { grid-template-columns: 1fr; direction: ltr; }
+    .footer { grid-template-columns: 1fr; padding: 60px 40px; }
+    .footer-right { text-align: left; }
+    .disclosure { margin: 40px; padding: 40px; }
+  }
+
+  /* ── FADE IN ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="pdfModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">✕ &nbsp;Close</button>
+    <iframe id="modalFrame" src=""></iframe>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">BAENG101 · VIT Vellore · April 2026</p>
+    <h1 class="hero-title">Communi<br><em>cation</em><br>Portfolio</h1>
+    <p class="hero-subtitle">"Communication is not just<br>about words — it is about understanding."</p>
+    <div class="hero-meta">
+      <span><strong>Sanjay Kumar S</strong></span>
+      <span>25BCE0080 &nbsp;·&nbsp; B.E. Computer Science</span>
+      <span>Submitted to: Rajalakshmi K</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-quote-block">
+      <p class="hero-quote">Through three distinct entries, I examine the ways in which people connect, misunderstand, and ultimately find common ground. Each piece reflects communication not as a subject to be studied, but as a skill to be practised every day.</p>
+      <p class="hero-quote-attr">— Portfolio Statement</p>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- ENTRIES INTRO -->
+<div class="section-intro fade-up">
+  <p class="section-label">Three Entries · Two Modes · One Theme</p>
+  <h2 class="section-heading">A portfolio built<br>around <em>lived communication</em></h2>
+  <div class="divider"></div>
+</div>
+
+<!-- ENTRIES -->
+<div class="entries">
+
+  <!-- ENTRY 1: CONFLICT MANAGEMENT -->
+  <div class="entry-card fade-up">
+    <div>
+      <span class="entry-number">01</span>
+      <span class="entry-tag">✦ Written Mode</span>
+      <h3 class="entry-title">Case Study on Workplace Conflict Across Cultures</h3>
+      <p class="entry-desc">A documented narrative of cross-cultural miscommunication between an American and Japanese product team. Explores how communication styles — shaped by cultural values — create professional friction even when both parties act in good faith, and how empathy and structural change can resolve it.</p>
+      <div class="mode-badges">
+        <span class="badge">Written</span>
+        <span class="badge">Conflict Management</span>
+        <span class="badge">Cross-Cultural Communication</span>
+      </div>
+    </div>
+    <div>
+      <div class="pdf-preview" onclick="openModal('/mnt/user-data/uploads/Red_Maroon_Minimalist_Annual_Report_Cover_A4__1_.pdf')">
+        <iframe src="/mnt/user-data/uploads/Red_Maroon_Minimalist_Annual_Report_Cover_A4__1_.pdf#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0" tabindex="-1"></iframe>
+        <div class="pdf-overlay">
+          <a class="pdf-open-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 6l3 3 3-3M2 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Open Full Document
+          </a>
+          <p class="pdf-hint">Tap to read the full case study</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTRY 2: AD REWORK -->
+  <div class="entry-card reverse fade-up">
+    <div>
+      <span class="entry-number">02</span>
+      <span class="entry-tag">✦ Visual Mode</span>
+      <h3 class="entry-title">Lost in Noise — Reworking a Cluttered Advertisement</h3>
+      <p class="entry-desc">A critical deconstruction of the Fair & Lovely advertising campaign, identifying ethical failures in visual and verbal communication — colorism, false product claims, and harmful messaging — followed by a redesigned ad that communicates the same product honestly, without exploiting social insecurity.</p>
+      <div class="mode-badges">
+        <span class="badge">Visual</span>
+        <span class="badge">Communication Through Media</span>
+        <span class="badge">Ethical Advertising</span>
+      </div>
+    </div>
+    <div>
+      <div class="ad-preview-container">
+        <div class="ad-split">
+          <div class="ad-original">
+            <span class="ad-label">Original</span>
+            <div class="ad-tag">"7 Days Challenge.<br>Guaranteed Results."</div>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="opacity:0.4"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/><path d="M10 16c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" fill="rgba(255,255,255,0.15)"/></svg>
+            <p style="font-size:10px;color:rgba(255,255,255,0.4);text-align:center;line-height:1.5">Colorism as premise · False claims · Identity transformation</p>
+          </div>
+          <div class="ad-new">
+            <span class="ad-label">Redesigned</span>
+            <div class="ad-tag">your skin.<br>your story.</div>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="opacity:0.5"><circle cx="16" cy="16" r="14" stroke="rgba(107,30,42,0.5)" stroke-width="1.5"/><path d="M10 16c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" fill="rgba(107,30,42,0.15)"/></svg>
+            <p style="font-size:10px;color:rgba(80,40,30,0.6);text-align:center;line-height:1.5">Inclusive · Honest claims · Real care</p>
+          </div>
+        </div>
+        <div class="ad-bottom-bar">
+          <span>Fair &amp; Lovely → Glow &amp; Lovely</span>
+          <button class="ad-open-link" onclick="openModal('/mnt/user-data/uploads/Lost_in_Noise_Reworking_a_Cluttered_Advertisement__1_.pdf')">View Full Analysis →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTRY 3: SPEECH RECORDING -->
+  <div class="entry-card fade-up">
+    <div>
+      <span class="entry-number">03</span>
+      <span class="entry-tag">✦ Oral / Aural Mode</span>
+      <h3 class="entry-title">How Social Media Has Changed the Way We Communicate</h3>
+      <p class="entry-desc">A formal persuasive speech examining social media's transformative — and often corrosive — effect on human communication. The speech argues that while social media has democratised access and amplified voices, it has traded depth for speed, leaving us connected in quantity but impoverished in quality.</p>
+      <div class="mode-badges">
+        <span class="badge">Oral / Aural</span>
+        <span class="badge">Digital Communication</span>
+        <span class="badge">Persuasive Speech</span>
+      </div>
+    </div>
+    <div>
+      <div class="audio-container">
+        <div class="audio-title-block">
+          <p class="audio-eyebrow">Speech Recording · Entry 03</p>
+          <p class="audio-track-title">"How Social Media Has Changed the Way We Communicate"</p>
+        </div>
+
+        <!-- Waveform visual -->
+        <div class="waveform" id="waveform"></div>
+
+        <div class="audio-controls">
+          <div class="audio-progress-wrap">
+            <div class="progress-bar-track" id="progressTrack">
+              <div class="progress-bar-fill" id="progressFill"></div>
+            </div>
+            <div class="audio-time">
+              <span id="currentTime">0:00</span>
+              <span id="totalTime">--:--</span>
+            </div>
+          </div>
+
+          <div class="audio-btn-row">
+            <button class="play-btn" id="playBtn" onclick="togglePlay()">
+              <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <span class="play-label" id="playLabel">Play Audio</span>
+          </div>
+
+          <div class="volume-row">
+            <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+            <input type="range" class="volume-slider" id="volSlider" min="0" max="1" step="0.05" value="1" oninput="setVolume(this.value)">
+          </div>
+        </div>
+
+        <audio id="audioPlayer" src="/mnt/user-data/uploads/Recording__3_.m4a" preload="metadata"></audio>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- AI DISCLOSURE -->
+<div class="disclosure fade-up">
+  <p class="disclosure-label">AI Usage Disclosure</p>
+  <p class="disclosure-text">In accordance with the Portfolio Submission Guidelines, AI tools were used in the preparation of this portfolio. Specifically, <strong>Claude (Anthropic)</strong> was used for structuring and drafting content across all three entries — including idea organisation, research structuring, and writing assistance. All critical judgements, the choice of campaigns and topics, and the creative direction of each piece reflect the student's own thinking and academic intent.</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    <p class="footer-name">Sanjay<br>Kumar S</p>
+    <p class="footer-detail">
+      25BCE0080<br>
+      B.E. Computer Science &amp; Engineering<br>
+      VIT Vellore
+    </p>
+  </div>
+  <div class="footer-right">
+    <p class="footer-course">Technical English Communication</p>
+    <p class="footer-inst">BAENG101 · April 2026<br>Submitted to: Rajalakshmi K</p>
+  </div>
+  <div class="footer-line"></div>
+  <div class="footer-bottom">
+    <span>Communication Portfolio · Three Entries</span>
+    <span>Written · Visual · Oral/Aural</span>
+  </div>
+</footer>
+
+<script>
+  // ── WAVEFORM GENERATION ──
+  const wf = document.getElementById('waveform');
+  const heights = [30,55,40,70,45,80,35,60,75,50,65,40,85,55,45,70,35,60,50,80,45,65,75,40,55,70,35,50,60,45,80,55,40,70,65,50,75,35,60,45];
+  heights.forEach((h, i) => {
+    const bar = document.createElement('div');
+    bar.className = 'waveform-bar';
+    bar.style.height = h + '%';
+    bar.id = 'bar-' + i;
+    wf.appendChild(bar);
+  });
+
+  // ── AUDIO PLAYER ──
+  const audio = document.getElementById('audioPlayer');
+  const playBtn = document.getElementById('playBtn');
+  const playIcon = document.getElementById('playIcon');
+  const playLabel = document.getElementById('playLabel');
+  const progressFill = document.getElementById('progressFill');
+  const progressTrack = document.getElementById('progressTrack');
+  const currentTimeEl = document.getElementById('currentTime');
+  const totalTimeEl = document.getElementById('totalTime');
+
+  const playIconSVG = '<path d="M8 5v14l11-7z"/>';
+  const pauseIconSVG = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+
+  function fmt(s) {
+    const m = Math.floor(s/60), sec = Math.floor(s%60);
+    return m + ':' + (sec<10?'0':'') + sec;
+  }
+
+  audio.addEventListener('loadedmetadata', () => {
+    totalTimeEl.textContent = fmt(audio.duration);
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    const pct = (audio.currentTime / audio.duration) * 100 || 0;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = fmt(audio.currentTime);
+    // update waveform bars
+    const barIdx = Math.floor((pct / 100) * heights.length);
+    heights.forEach((_, i) => {
+      const b = document.getElementById('bar-' + i);
+      b.classList.toggle('played', i < barIdx);
+    });
+  });
+
+  audio.addEventListener('ended', () => {
+    playIcon.innerHTML = playIconSVG;
+    playLabel.textContent = 'Play Audio';
+  });
+
+  function togglePlay() {
+    if (audio.paused) {
+      audio.play();
+      playIcon.innerHTML = pauseIconSVG;
+      playLabel.textContent = 'Pause';
+    } else {
+      audio.pause();
+      playIcon.innerHTML = playIconSVG;
+      playLabel.textContent = 'Play Audio';
+    }
+  }
+
+  progressTrack.addEventListener('click', (e) => {
+    const rect = progressTrack.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+  });
+
+  function setVolume(v) { audio.volume = v; }
+
+  // ── PDF MODAL ──
+  function openModal(src) {
+    document.getElementById('modalFrame').src = src;
+    document.getElementById('pdfModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('pdfModal').classList.remove('open');
+    document.getElementById('modalFrame').src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('pdfModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('pdfModal')) closeModal();
+  });
+
+  // ── FADE IN ON SCROLL ──
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
