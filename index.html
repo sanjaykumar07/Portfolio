@@ -813,8 +813,8 @@
       </div>
     </div>
     <div>
-      <div class="pdf-preview" onclick="openModal('./Red Maroon Minimalist Annual Report Cover A4 (1).pdf')">
-        <iframe src=".Red Maroon Minimalist Annual Report over A4 (1).pdf#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0" tabindex="-1"></iframe>
+      <div class="pdf-preview" onclick="openModal('./casestudy.pdf')">
+        <iframe src="./casestudy.pdf#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0" tabindex="-1"></iframe>
         <div class="pdf-overlay">
           <a class="pdf-open-btn">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 6l3 3 3-3M2 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -857,7 +857,7 @@
         </div>
         <div class="ad-bottom-bar">
           <span>Fair &amp; Lovely → Glow &amp; Lovely</span>
-          <button class="ad-open-link" onclick="openModal('./Lost in Noise Reworking a Cluttered Advertisement (1).pdf')">View Full Analysis →</button>
+          <button class="ad-open-link" onclick="openModal('./ad.pdf')">View Full Analysis →</button>
         </div>
       </div>
     </div>
@@ -910,7 +910,7 @@
           </div>
         </div>
 
-        <audio id="audioPlayer" src="./Recording (3).m4a" preload="metadata"></audio>
+        <audio id="audioPlayer" src="./speech.m4a" preload="metadata"></audio>
       </div>
     </div>
   </div>
@@ -982,7 +982,6 @@
     const pct = (audio.currentTime / audio.duration) * 100 || 0;
     progressFill.style.width = pct + '%';
     currentTimeEl.textContent = fmt(audio.currentTime);
-    // update waveform bars
     const barIdx = Math.floor((pct / 100) * heights.length);
     heights.forEach((_, i) => {
       const b = document.getElementById('bar-' + i);
